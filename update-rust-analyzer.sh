@@ -9,5 +9,4 @@ else
     git clone "https://github.com/rust-analyzer/rust-analyzer"
     cd "$dir"
 fi
-cargo install-lsp
-cargo install-code
+cargo install-ra --server

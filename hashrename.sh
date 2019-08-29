@@ -27,6 +27,6 @@ checksum="${checksum}sum"
 
 for file in "$@"; do
     ext=${file##*.}
-    sum=$("$checksum" -- "$file" | grep -Eo '^\S+')
+    sum=$("$checksum" -- "$file" | grep -Eo '^\S+' | sed 's/\\//g')
     mv -iv -- "$file" "${sum}.${ext}"
 done

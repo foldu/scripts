@@ -18,7 +18,7 @@ def main():
 
     rx = re.compile(r"/ref=[^/]*$")
     for url in map(urlparse, urls):
-        stripped = url._replace(query="", path=rx.sub("", url.path))
+        stripped = url._replace(query="", path=rx.sub("", url.path), fragment="")
         print(stripped.geturl())
 
 
